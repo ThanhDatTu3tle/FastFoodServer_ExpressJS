@@ -1,25 +1,14 @@
 import { CategoryModel } from "../models/categoryModel.js";
-// import { ProductModel } from "../models/ProductModel.js";
+import { ProductModel } from "../models/ProductModel.js";
 
-export const getCategory = async (req, res) => {
+export const getPromotion = async (req, res) => {
     try {
-        // const { categoryID } = req.value.params
-        const category = await CategoryModel.find()
-        res.status(200).json(category)
+        const promotion = await ProductModel.find()
+        res.status(200).json(promotion)
     } catch (error) {
         res.status(500).json({ error: error })
     } 
 };
-
-// export const getCategoryProduct = async (req, res, next) => {
-//     try {
-//         const { categoryID } = req.value.params
-//         const product = await CategoryModel.findById(categoryID).populate('products')
-//         res.status(200).json({products: category.products})
-//     } catch (error) {
-//         res.status(500).json({ error: error })
-//     } 
-// };
 
 // export const createCategory = async (req, res) => {
 //     try {

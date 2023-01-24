@@ -8,10 +8,11 @@ import mongoose, { mongo } from 'mongoose';
 // routes
 import home from './routers/home.js';
 import category from './routers/category.js';
-import products from './routers/products.js';
+import product from './routers/product.js';
+
 
 const app = express()
-const PORT = process.env.port || 5000
+const PORT = process.env.port || 4000
 const URI = 'mongodb+srv://tu3tle:dat27032001@clusterfastfood.tbcnuty.mongodb.net/?retryWrites=true&w=majority'
 
 // use middleware
@@ -22,7 +23,7 @@ app.use(cors())
 // use routes
 app.use('/', home)
 app.use('/category', category)
-app.use('/products', products)
+app.use('/product', product)
 
 mongoose.set('strictQuery', false)
 mongoose
